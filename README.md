@@ -22,7 +22,7 @@ yum localinstall mysql57-community-release-el7-8.noarch.rpm
 yum repolist enabled | grep "mysql.*-community.*"
 ```
 
-![1564819094893](C:\Users\lenovo\Desktop\sonar\assets\1564819094893.png)
+![1564819094893](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564819094893.png)
 
 ### 4 安装MySQL
 
@@ -51,7 +51,7 @@ mysql安装完成之后，在/var/log/mysqld.log文件中给root生成了一个�
 grep 'temporary password' /var/log/mysqld.log
 ```
 
-![1564826004401](C:\Users\lenovo\Desktop\sonar\assets\1564826004401.png)
+![1564826004401](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564826004401.png)
 
 
    ```shell
@@ -62,7 +62,7 @@ grep 'temporary password' /var/log/mysqld.log
 ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
 ```
 
-![1564826243350](C:\Users\lenovo\Desktop\sonar\assets\1564826243350.png)
+![1564826243350](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564826243350.png)
 
 发现报了一个错误 ：mysql5.7默认安装了密码安全检查插件（validate_password），默认密码检查策略要求密码必须包含：  大小写字母、数字和特殊符号，并且长度不能少于8位。修改策略之后再执行修改密码
 
@@ -75,7 +75,7 @@ set global validate_password_policy=0;
 set global validate_password_policy=LOW;
 ```
 
-![1564826391211](C:\Users\lenovo\Desktop\sonar\assets\1564826391211.png)
+![1564826391211](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564826391211.png)
 
 **另外开起mysql对外访问权限，允许远程连接：**
 
@@ -131,7 +131,7 @@ mysql> select host,user,password from user;
 
   重启mysql数据库，再次登录查看默认存储引擎设置是否生效
 
-  ![1564828332081](C:\Users\lenovo\Desktop\sonar\assets\1564828332081.png)
+  ![1564828332081](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564828332081.png)
 
 ### 8.设置mysql缓存参数
 
@@ -151,10 +151,10 @@ mysql> select host,user,password from user;
   >
   >   query_cache_size=32M
 
-  ![1564829456677](C:\Users\lenovo\Desktop\sonar\assets\1564829456677.png)
+  ![1564829456677](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564829456677.png)
 
 
-![1564829360775](C:\Users\lenovo\Desktop\sonar\assets\1564829360775.png)
+![1564829360775](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564829360775.png)
 
 
 
@@ -168,7 +168,7 @@ mysql> select host,user,password from user;
 CREATE DATABASE sonarQube  CHARACTER SET utf8 COLLATE utf8_general_ci;
 ```
 
-![1564829818611](C:\Users\lenovo\Desktop\sonar\assets\1564829818611.png)
+![1564829818611](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564829818611.png)
 
 ### 2.从官网下载LTS版本的sonarQuba安装包
 
@@ -192,7 +192,7 @@ unzip sonarqube-6.7.6.zip
 mv sonarqube-6.7.6/ sonarqube
 ```
 
-![1564830731645](C:\Users\lenovo\Desktop\sonar\assets\1564830731645.png)
+![1564830731645](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564830731645.png)
 
 > 之前介绍组成的时候说sonarqube是sonar的服务端，相当于一个web服务器，用来发布应用，在线浏览、配置分析等。怎么样？有没有很面熟的感觉？是不是有点像tomcat呢？
 >
@@ -242,23 +242,23 @@ vi sonar.properties
 >
 > sonar.web.port=9000
 
-![1564833827026](C:\Users\lenovo\Desktop\sonar\assets\1564833827026.png)
+![1564833827026](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564833827026.png)
 
-![1564831502913](C:\Users\lenovo\Desktop\sonar\assets\1564831502913.png)
+![1564831502913](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564831502913.png)
 
 ### 4.启动sonarQubeweb service
 
 第一次启动会自动在数据库生成所需的表，可进入数据库查看下
 
-![1564832745392](C:\Users\lenovo\Desktop\sonar\assets\1564832745392.png)
+![1564832745392](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564832745392.png)
 
-![1564834809402](C:\Users\lenovo\Desktop\sonar\assets\1564834809402.png)
+![1564834809402](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564834809402.png)
 
-![1564834829847](C:\Users\lenovo\Desktop\sonar\assets\1564834829847.png)
+![1564834829847](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564834829847.png)
 
-![1564839872017](C:\Users\lenovo\Desktop\sonar\assets\1564839872017.png)
+![1564839872017](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564839872017.png)
 
-![1564839897527](C:\Users\lenovo\Desktop\sonar\assets\1564839897527.png)
+![1564839897527](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564839897527.png)
 
 ### 5.坑
 
@@ -285,7 +285,7 @@ vi sonar.properties
 >
 >  \# vi  /opt/mod/sonarQube/elasticsearch/config/elasticsearch.yml 
 
-![1564836220757](C:\Users\lenovo\Desktop\sonar\assets\1564836220757.png)
+![1564836220757](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564836220757.png)
 
 - 2.4096
 
@@ -331,18 +331,18 @@ vi sonar.properties
 
 - 修改java的jdk为自己的配置地址（自己测试出来的，别人好像没有这个弄过）
 
-  ![1564895362076](assets/1564895362076.png)
+  ![1564895362076](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564895362076.png)
 
 ### 6.Sonarweb下载汉化包
 
-![1564840092141](C:\Users\lenovo\Desktop\sonar\assets\1564840092141.png)
+![1564840092141](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564840092141.png)
 
 ## 3.使用SonarQubeScanner分析代码
 - 1. 从官网下载scanner对应的版本后直接解压
 
 <https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/>
 
-![1564840363725](C:\Users\lenovo\Desktop\sonar\assets\1564840363725.png)
+![1564840363725](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564840363725.png)
 
 - 2.通过编辑xxxx/conf/sonar-scanner.properties更新全局设置以指向SonarQube服务器
 
@@ -354,21 +354,21 @@ vi sonar.properties
 
 ![1564842749888](assets/1564842749888.png)
 
-![1564841512159](C:\Users\lenovo\Desktop\sonar\assets\1564841512159.png)
+![1564841512159](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564841512159.png)
 
 - 3.将xxxx/bin设置到环境变量PATH中
 
-  ![1564843690014](assets/1564843690014.png)
+  ![1564843690014](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564843690014.png)
 
-- 4.在命令行输入sonar-scanner –h，验证安装结果[1564841943393](C:\Users\lenovo\Desktop\sonar\assets\1564841943393.png)
+- 4.在命令行输入sonar-scanner –h，验证安装结果[1564841943393](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/564841943393.png)
 
-  ![1564843616177](assets/1564843616177.png)
+  ![1564843616177](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564843616177.png)
 
 - 5 在需要分析的项目根目录中创建配置文件：sonar-project.properties
 
-![1564847792092](assets/1564847792092.png)
+![1564847792092](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564847792092.png)
 
-![1564871834702](assets/1564871834702.png)
+![1564871834702](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564871834702.png)
 
 - 6.从需要分析的项目根目录运行以下命令以启动分析，出现执行EXECUTION SUCCESS表示成功.
 
@@ -376,10 +376,10 @@ vi sonar.properties
   sonar-scanner
   ```
 
-- ![1564872338618](assets/1564872338618.png)
+- ![1564872338618](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564872338618.png)
 
 - 7.登录sonarQubeWeb查看结果
-  ![1564872387443](assets/1564872387443.png)
+  ![1564872387443](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564872387443.png)
 
 ## 4.使用maven插件分析代码
 
@@ -406,11 +406,11 @@ vi sonar.properties
   mvn sonar:sonar
   ```
 
-  ![1564895033044](assets/1564895033044.png)
+  ![1564895033044](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564895033044.png)
 
 - 3.登录sonarQubeWeb查看结果
 
-  ![1564895075099](assets/1564895075099.png)
+  ![1564895075099](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564895075099.png)
 
 ### 方式2(比较灵活)：
 
@@ -421,6 +421,6 @@ vi sonar.properties
   
   ```
 
-  ![1564895179900](assets/1564895179900.png)
+  ![1564895179900](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564895179900.png)
 
-![1564895191266](assets/1564895191266.png)
+![1564895191266](https://github.com/hufanglei/daily-code/tree/dongnao-sonar-20190804/assets/1564895191266.png)
